@@ -1,0 +1,18 @@
+name: gtest
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: configure cmake
+      run: cmake -S . -B build
+    - name: build project (libraries and gtest)
+      run:  cmake --build build
+    - name: run test
+      run: cd build && ctest
