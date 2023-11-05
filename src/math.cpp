@@ -7,3 +7,7 @@ unsigned long long factorial(unsigned int n) {
         return n * factorial(n - 1);
     }
 }
+
+int square(int x){
+    
+}
